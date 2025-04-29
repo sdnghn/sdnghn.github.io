@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에버랜드</title>
+    <style>
+        body {
+            background-image:
+                url("assets/back_cloud.ca0a36b7.png"),
+                linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe,
+                    #41dfff, #46eefa, #5ffbf1);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        h2 {
+            margin: 0px 0 20px 30px;
+        }
+
+        h3 {
+            margin: 10px 0 10px 60px;
+        }
+
+        #banner {
+            width: 1200px;
+            list-style-type: none;
+            background-color: #ffe4e1;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin: 30px auto;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #banner li {
+            display: inline;
+        }
+
+        a {
+            text-decoration: none;
+            color: black
+        }
+
+        a:hover {
+            color: purple;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .menu {
+            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 30px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .attraction {
+            margin: 0 20px 30px 20px;
+            border-collapse: collapse;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .attraction_title {
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        .attraction th,
+        .attraction td {
+            padding: 10px;
+            background-color: #e4fbff;
+            border: 1px solid #00000036;
+        }
+
+        .attraction img {
+            width: 200px;
+            border-radius: 20px 0 20px 0;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .notice {
+            color: red;
+            font-size: 13px;
+            text-decoration: underline;
+        }
+
+        #cost {
+            margin: 0 auto 30px auto;
+            border: 1px solid;
+            border-collapse: collapse;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #cost th,
+        td {
+            background-color: #e4fbff;
+            border: 1px solid #00000036;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #bus li {
+            margin: 20px;
+        }
+
+        #subway li {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="banner">
+        <li><a href="code/book_banner1.html">예제 8-6</a></li>
+        <li> | </li>
+        <li><a href="code/book_banner2.html">예제 8-7</a></li>
+        <li> | </li>
+        <li><a href="code/inline_block.html">예제 8-9</a></li>
+        <li> | </li>
+        <li><a href="code/h_menu.html">예제 8-10</a></li>
+        <li> | </li>
+        <li><a href="code/v_menu.html">예제 8-11</a></li>
+        <li> | </li>
+        <li><a href="code/boxes.html">예제 8-12</a></li>
+    </ul>
+
+    <img src="assets/image.png" style="display: block; margin: 0 auto;">
+
+    <div class="menu">
+        <h2>어트랙션</h2>
+        <table class="attraction">
+            <tr>
+                <th class="attraction_title">T 익스프레스</th>
+                <th class="attraction_title">로스트밸리</th>
+                <th class="attraction_title">아마존 익스프레스</th>
+            </tr>
+            <tr>
+                <td><img src="assets/t-express.jpg"></td>
+                <td><img src="assets/lostValley.png"></td>
+                <td><img src="assets/amazon-express.jpg"></td>
+            </tr>
+            <tr>
+                <td>
+                    시속 104km의 엄청난 속도, 낙하각 77도의 아찔함!<br>
+                    세계 최고의 우든코스터가 <br>
+                    잊지 못할 최고의 기억을 여러분께 선사합니다.<br>
+                    <span class="notice">※ 매주 월요일은 정기점검으로 인하여 오픈시간이 13:00 입니다.</span>
+                </td>
+                <td>
+                    대자연이 살아 숨쉬는 초식동물 사파리!<br>
+                    기린, 코끼리, 코뿔소<br>
+                    지상에서 가장 큰 육상 동물을<br>
+                    보다 가까이에서 만나보세요<br>
+                    <span class="notice">※ 로스트밸리는 평일 한정 현장줄서기로 운영합니다. (4/10~6/5)</span>
+                </td>
+                <td>
+                    많은 탐험가들이 호수 속에 잠들어 있는<br>
+                    황금을 차지하기 위해 보트 위에 몸을 맡겼다!<br>
+                    아마존 밀림 구석구석 장장 580미터 굽이치는 급류 속으로<br>
+                    꿈과 모험을 찾아 떠나는 곳!!
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="menu">
+        <h2>요금 안내</h2>
+        <table id="cost">
+            <tr>
+                <th></th>
+                <th>대인/청소년</th>
+                <th>소인/경로</th>
+            </tr>
+            <tr>
+                <td>시즌 A</td>
+                <td>62,000원</td>
+                <td>52,000원</td>
+            </tr>
+            <tr>
+                <td>시즌 B</td>
+                <td>52,000원</td>
+                <td>42,000원</td>
+            </tr>
+            <tr>
+                <td>시즌 C</td>
+                <td>46,000원</td>
+                <td>36,000원</td>
+            </tr>
+            <tr>
+                <td>시즌 D</td>
+                <td>68,000원</td>
+                <td>58,000원</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="menu">
+        <h2>오시는 길</h2>
+        <h3>🚇 지하철 이용 🚇</h3>
+        <img src="assets/subway.png" style="height: 300px; display: block; margin: 0 auto;">
+        <ol id="subway">
+            <li><b>분당선 기흥역</b>으로 이동</li>
+            <li><b>에버라인(경전철)</b>으로 환승하세요!</li>
+            <li><b>에버라인 종점에 내려서 셔틀버스(무료)</b>로 에버랜드, 캐리비안 베이까지 이동</li>
+        </ol><br>
+
+        <h3>🚌 버스 이용 🚌</h3>
+        <ul id="bus">
+            <li><b>5002번</b><br>신논현역 - 강남역 - 양재역 경유</li>
+            <li><b>5700번</b><br>강변역 - 잠실역 – 송파역 - 수서역 경유</li>
+            <li><b>1500-2번</b><br>사당역 - 남부터미널 – 판교역 - 분당(서현역) 경유</li>
+            <li><b>1113번</b><br>강변역 - 강동역 – 광주시청 - 외대입구 경유</li>
+        </ul>
+    </div>
+</body>
+
+</html>
