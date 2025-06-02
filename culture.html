@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <title>문화/예술</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Noto Sans KR", sans-serif;
+            position: relative;
+        }
+
+        nav {
+            height: 80px;
+            background-color: #a12a7e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo a:hover {
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+
+        ul.menu {
+            display: flex;
+            gap: 24px;
+            list-style-type: none;
+            justify-content: center;
+        }
+
+        .menu li {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.67);
+            border-radius: 20px;
+            transition: 0.6s;
+        }
+
+        .container {
+            width: 95vw;
+            max-width: 1300px;
+            margin: 40px auto 0 auto;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0 0 15px 20px;
+        }
+
+        .section-bg {
+            background-color: #D9D9D9;
+            border-radius: 20px;
+            padding: 40px 32px;
+            margin-bottom: 48px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            margin-left: 60px;
+        }
+
+        .symbol-group {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 32px;
+            margin: 0 auto 48px auto;
+        }
+
+        .symbol-image-box {
+            width: 520px;
+            height: 475px;
+            flex-grow: 1;
+            max-width: 550px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .symbol-image-box .img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .symbol-image-box .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .symbol-textbox-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 600px;
+            height: 500px;
+            flex-grow: 1;
+            max-width: 800px;
+            align-items: center;
+            justify-content: stretch;
+        }
+
+        .symbol-textbox,
+        .symbol-textbox-info {
+            width: 600px;
+            background-color: #DAFFF3;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 18px;
+            color: black;
+            text-align: left;
+            padding: 28px 32px;
+            box-sizing: border-box;
+            line-height: 1.7;
+            overflow: hidden;
+        }
+
+        .symbol-textbox {
+            height: 350px;
+        }
+
+        .symbol-textbox-info {
+            height: 100px;
+        }
+
+        .symbol-textbox p,
+        .symbol-textbox-info p {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .symbol-textbox ul,
+        .symbol-textbox-info ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        footer {
+            padding: 40px 15px;
+            margin-top: 50px;
+            color: white;
+            background-color: #a12a7e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        #address {
+            width: auto;
+            margin: 0;
+            float: none;
+        }
+
+        #footer_image {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            margin-right: 40px;
+        }
+
+        #footer_image img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        #info {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        #copyright {
+            color: #feffb0;
+            margin-top: 10px;
+            font-size: 11px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                min-width: 0;
+                padding: 0 8px;
+                box-sizing: border-box;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin: 40px 0 10px 10px;
+                font-size: 28px;
+            }
+
+            .section-bg {
+                padding: 24px 8px;
+            }
+
+            .title {
+                font-size: 20px;
+                margin-top: 0;
+                margin-left: 10px;
+                margin-bottom: 24px;
+            }
+
+            .symbol-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+
+            .symbol-image-box {
+                max-width: 400px;
+                height: 300px;
+            }
+
+            .symbol-textbox-wrap {
+                align-items: center;
+                width: 100%;
+                height: auto;
+                gap: 10px;
+            }
+
+            .symbol-textbox,
+            .symbol-textbox-info {
+                max-width: 400px;
+                font-size: 13px;
+                padding: 10px;
+            }
+
+            .symbol-textbox {
+                height: auto;
+                min-height: 120px;
+            }
+
+            .symbol-textbox-info {
+                height: auto;
+                min-height: 40px;
+            }
+
+            .symbol-textbox p,
+            .symbol-textbox-info p,
+            .symbol-textbox ul,
+            .symbol-textbox-info ul {
+                font-size: 13px;
+            }
+
+            ul.menu {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                gap: 4px;
+                padding: 0;
+                width: 100%;
+            }
+
+            .menu li {
+                font-size: 13px;
+                white-space: nowrap;
+            }
+
+            .logo {
+                justify-content: flex-start;
+                margin-bottom: 8px;
+            }
+
+            .logo img {
+                height: 36px;
+                width: auto;
+                margin-top: 12px;
+                margin-left: 16px;
+            }
+
+            nav {
+                flex-direction: column;
+                height: auto;
+                align-items: flex-start;
+                padding: 10px 16px;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            #footer_image img {
+                width: 70%;
+                height: auto;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                margin: 10px 0 0 0;
+                padding-left: 2px;
+                padding-right: 2px;
+            }
+
+            .section-title {
+                font-size: 15px;
+                margin-left: 4px;
+                margin-bottom: 6px;
+            }
+
+            .section-bg {
+                padding: 6px 2px;
+                border-radius: 8px;
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 11px;
+                margin-left: 4px;
+                margin-bottom: 4px;
+            }
+
+            .symbol-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                margin-bottom: 12px;
+            }
+
+            .symbol-image-box {
+                width: 90px;
+                height: 70px;
+            }
+
+            .symbol-textbox-wrap {
+                width: 100%;
+                height: auto;
+                gap: 4px;
+            }
+
+            .symbol-textbox,
+            .symbol-textbox-info {
+                width: 90px;
+                font-size: 8px;
+                padding: 4px 2px;
+            }
+
+            .symbol-textbox {
+                height: auto;
+                min-height: 40px;
+            }
+
+            .symbol-textbox-info {
+                height: auto;
+                min-height: 20px;
+            }
+
+            .symbol-textbox p,
+            .symbol-textbox-info p,
+            .symbol-textbox ul,
+            .symbol-textbox-info ul {
+                font-size: 8px;
+            }
+
+
+            footer {
+                padding: 12px 2vw;
+                font-size: 11px;
+                gap: 8px;
+            }
+
+            #footer_image img {
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="./index.html"><img src="./assets/logo.png"></a>
+        </div>
+        <ul class="menu">
+            <li><a href="./seongnam.html">성남 소개</a></li>
+            <li><a href="./attraction.html">대표 명소</a></li>
+            <li><a href="./tasty.html">로컬 맛집/카페</a></li>
+            <li><a href="./culture.html">문화/예술</a></li>
+            <li><a href="./event.html">이벤트/축제</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="section-title">문화/예술</div>
+
+        <div class="section-bg">
+            <div class="title">성남아트센터</div>
+            <div class="symbol-group">
+                <div class="symbol-image-box">
+                    <div class="img-placeholder"><img src="./assets/seongnamartcenter.png"></div>
+                </div>
+                <div class="symbol-textbox-wrap">
+                    <div class="symbol-textbox">
+                        <p><strong>생활이 예술이 되는 곳!</strong></p>
+                        <p>
+                            성남아트센터는 날로 증가하는 문화예술 수요를 충족시키기 위해 건립된 전문 문화예술 공간입니다.
+                        </p>
+                        <p>
+                            오페라하우스, 콘서트홀, 앙상블시어터 등 3개의 공연장과 야외공연장이 있으며 성남큐브미술관, 성남아트센터 갤러리808에서 다양한 미술작품과 전시작품을
+                            만날 수
+                            있습니다.
+                        </p>
+                        <p>
+                            수준 높은 공연과 전시, 문화 강좌 아카데미 참여를 통해 다양한 문화와 예술을 향유할 수 있으며, 주변에는 다양한 경관성, 예술이 있는 열린광장 및
+                            특화거리가
+                            조성되어 있습니다.
+                        </p>
+                    </div>
+                    <div class="symbol-textbox-info">
+                        <ul>
+                            <li><strong>위치</strong>: 경기도 성남시 분당구 성남대로 808 (야탑동)</li>
+                            <li><strong>전화번호</strong>: 031-783-8000</li>
+                            <li><strong>영업시간</strong>: 매일 10:00 ~ 22:00 (입장마감 : 상시개방)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="title">성남 시립 합창단</div>
+            <div class="symbol-group">
+                <div class="symbol-image-box">
+                    <div class="img-placeholder"><img src="./assets/sing.png"></div>
+                </div>
+                <div class="symbol-textbox-wrap">
+                    <div class="symbol-textbox">
+                        <p><strong>성남시립합창단은 1986년 전문 수도원 전문합창단 시대를 연 선구자적 전통을 전국적인 지명도를 가진 성악가로 구성된 혼성 합창단입니다.</strong>
+                        </p>
+                        <p>
+                            성남시립합창단은 1986년 전문 수도원 전문합창단 시대를 연 선구자적 전통을 전국적인 지명도를 가진 성악가로 구성된 혼성 합창단입니다.
+                        </p>
+                        <p>
+                            지금까지 141회의 정기연주와
+                            기획공연 및 1500여회에 달하는 다양한 무대와
+                            공연을 통해 문화 예술이 숨쉬는 살기좋은 도시를 만드는데 커다란 기여를 해왔습니다.
+                        </p>
+                    </div>
+                    <div class="symbol-textbox-info">
+                        <ul>
+                            <li><strong>위치</strong>: 경기도 성남시 분당구 성남대로 808 성남아트센터 콘서트홀</li>
+                            <li><strong>전화번호</strong>: 031-729-4807</li>
+                            <li><strong>영업시간</strong>: 이용시간 : 매일 10:00 ~ 18:00 (입장마감 : 17:00)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="title">성남큐브미술관</div>
+            <div class="symbol-group">
+                <div class="symbol-image-box">
+                    <div class="img-placeholder"><img src="./assets/seongnam_museum.png"></div>
+                </div>
+                <div class="symbol-textbox-wrap">
+                    <div class="symbol-textbox">
+                        <p><strong>성남문화재단이 운영하는 지역의 유일한 공립미술관</strong></p>
+                        <p>
+                            성남큐브미술관은 지난 2012년 9월에 등록되어 성남 시민을 위한 미술문화 향유 공간 창출 및 지역 미술문화 발전을 위해 노력하고 있습니다.
+                        </p>
+                        <p>
+                            동시대 국내외 이슈와 미감을 전시로 풀어내는‘ 동시대미감전’과 ‘동시대이슈전’ 지역 예술가의 작품을 소개함으로써 성남의 미술 지형을 조망해 보는 ‘성남의 얼굴전’을
+                            선보이고 있으며, 지역 미술의 미래를 살피고 확장의 디딤돌 역할을 하고자 '성남작가조명전’을 개최하여 지역 미술을 집중 응원하고 있습니다.
+                        </p>
+                    </div>
+                    <div class="symbol-textbox-info">
+                        <ul>
+                            <li><strong>위치</strong>: 경기도 성남시 분당구 성남대로 808 (야탑동)</li>
+                            <li><strong>전화번호</strong>: 031-783-8000</li>
+                            <li><strong>영업시간</strong>: 매일 10:00 ~ 18:00 (입장마감 : 월요일)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <article id="address">
+            <ul id="info">
+                <li>주소 : 13437 경기도 성남시 중원구 성남대로 997 (여수동)</li>
+                <li>번호 : 1577-3100</li>
+                <li id="copyright">Copyright by Donghoon Seo All Rights Reserved.</li>
+            </ul>
+        </article>
+        <div id="footer_image">
+            <img src="./assets/footer_logo.png">
+        </div>
+    </footer>
+</body>
+
+</html>

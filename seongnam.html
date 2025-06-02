@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <title>성남 소개</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Noto Sans KR", sans-serif;
+            position: relative;
+        }
+
+        nav {
+            height: 80px;
+            background-color: #a12a7e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo a:hover {
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+
+        ul.menu {
+            display: flex;
+            gap: 24px;
+            list-style-type: none;
+            justify-content: center;
+        }
+
+        .menu li {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.67);
+            border-radius: 20px;
+            transition: 0.6s;
+        }
+
+        .main {
+            padding-top: 50px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            box-sizing: border-box;
+            margin: 40px auto 0 auto;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0 0 15px 20px;
+        }
+
+        .section-bg {
+            width: 100%;
+            max-width: min(900px, 100% - 64px);
+            margin: 0 auto;
+            background-color: #D9D9D9;
+            border-radius: 20px;
+            padding: 40px 32px;
+            margin-bottom: 48px;
+            box-sizing: border-box;
+        }
+
+        .symbol-group {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin: 0 auto 48px auto;
+        }
+
+        .symbol-image-box {
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .symbol-image-box .img-placeholder img {
+            width: 160px;
+            height: auto;
+            max-height: 160px;
+            display: block;
+        }
+
+        .symbol-textbox {
+            width: 800px;
+            min-height: 200px;
+            background-color: #DAFFF3;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 17px;
+            color: #000;
+            text-align: left;
+            padding: 20px 24px;
+            box-sizing: border-box;
+
+        }
+
+        .symbol-textbox p {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .symbol-textbox ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .symbol-image-box,
+        .symbol-textbox {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .symbol-textbox,
+        .symbol-textbox-info {
+            overflow-wrap: break-word;
+            word-break: break-all;
+            box-sizing: border-box;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            margin-left: 60px;
+        }
+
+        .location-section {
+            margin-top: 40px;
+        }
+
+        .location-title {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .location-bg {
+            width: 100%;
+            max-width: min(900px, 100% - 64px);
+            background: #D9D9D9;
+            border-radius: 20px;
+            padding: 40px 32px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .location-group {
+            margin-bottom: 48px;
+        }
+
+        .location-textbox {
+            width: 100%;
+            max-width: 1150px;
+            height: 300px;
+            background-color: #DAFFF3;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            font-size: 20px;
+            color: black;
+            text-align: left;
+            margin: 0 auto 30px auto;
+            padding: 24px 32px;
+            overflow-wrap: break-word;
+            word-break: break-all;
+            box-sizing: border-box;
+        }
+
+        .location-textbox p {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        .map-image-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .map-image-box img {
+            display: block;
+            width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .population-table-box {
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: white;
+            overflow-x: auto;
+        }
+
+        .population-table-box table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .population-table-box th,
+        .population-table-box td {
+            border: 1px solid black;
+            padding: 8px 10px;
+            text-align: center;
+            font-size: 16px;
+            word-break: break-word;
+        }
+
+        .population-table-box th {
+            background-color: #daffd5;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 40px 15px;
+            margin-top: 50px;
+            color: white;
+            background-color: #a12a7e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        #address {
+            width: auto;
+            margin: 0;
+            float: none;
+        }
+
+        #footer_image {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            margin-right: 40px;
+        }
+
+        #footer_image img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        #info {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        #copyright {
+            color: #feffb0;
+            margin-top: 10px;
+            font-size: 11px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                align-items: flex-start;
+                padding: 10px 16px;
+            }
+
+            ul.menu {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                gap: 4px;
+                padding: 0;
+                width: 100%;
+            }
+
+            .menu li {
+                font-size: 13px;
+                white-space: nowrap;
+            }
+
+            .logo {
+                justify-content: flex-start;
+                margin-bottom: 8px;
+            }
+
+            .logo img {
+                height: 36px;
+                width: auto;
+                margin-top: 12px;
+                margin-left: 16px;
+            }
+
+            .container {
+                width: 100%;
+                min-width: 0;
+                padding: 0 8px;
+                box-sizing: border-box;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin: 0 0 10px 10px;
+            }
+
+            .section-bg {
+                padding: 24px 8px;
+            }
+
+            .symbol-group {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
+
+            .symbol-image-box {
+                width: 200px;
+                height: 200px;
+                flex-grow: 1;
+            }
+
+            .symbol-image-box .img-placeholder img {
+                width: 100px;
+                height: auto;
+            }
+
+            .symbol-textbox {
+                width: 100%;
+                min-width: 0;
+                height: auto;
+                flex-grow: 1;
+                font-size: 14px;
+                padding: 16px 10px;
+            }
+
+            .symbol-textbox p {
+                font-size: 16px;
+            }
+
+            .symbol-textbox ul {
+                font-size: 13px;
+            }
+
+            .title {
+                font-size: 20px;
+                margin-left: 10px;
+                margin-bottom: 8px;
+            }
+
+            .location-title {
+                font-size: 30px;
+                margin-bottom: 16px;
+            }
+
+            .location-bg {
+                padding: 24px 8px;
+            }
+
+            .location-textbox {
+                font-size: 15px;
+                padding: 14px 8px;
+                height: auto;
+            }
+
+            .location-textbox p {
+                font-size: 15px;
+            }
+
+            .map-image-box img {
+                width: 98vw;
+                max-width: 400px;
+            }
+
+            .population-table-box {
+                padding: 8px;
+            }
+
+            .population-table-box table {
+                min-width: 480px;
+                font-size: 13px;
+            }
+
+            .population-table-box th,
+            .population-table-box td {
+                font-size: 12px;
+                padding: 2px 5px;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            #footer_image img {
+                width: 70%;
+                height: auto;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100vw;
+                padding: 12px 2vw;
+            }
+
+            .section-title {
+                font-size: 20px;
+                margin-left: 4px;
+            }
+
+            .section-bg {
+                max-width: 100vw;
+                padding: 12px 2vw;
+            }
+
+            .title {
+                font-size: 16px;
+                margin-left: 4px;
+            }
+
+            .symbol-image-box {
+                width: 80px;
+                height: 80px;
+            }
+
+            .symbol-image-box .img-placeholder img {
+                width: 40px;
+                max-height: 40px;
+            }
+
+            .symbol-textbox {
+                font-size: 12px;
+                padding: 8px 4px;
+            }
+
+            .symbol-textbox p {
+                font-size: 13px;
+            }
+
+            .symbol-textbox ul {
+                font-size: 11px;
+            }
+
+            .location-title {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+
+            .location-bg {
+                padding: 12px 2vw;
+            }
+
+            .location-textbox {
+                font-size: 11px;
+                padding: 6px 2vw;
+            }
+
+            .location-textbox p {
+                font-size: 11px;
+            }
+
+            .map-image-box img {
+                width: 94vw;
+                max-width: 94vw;
+            }
+
+            .population-table-box {
+                padding: 2px;
+            }
+
+            .population-table-box table {
+                font-size: 10px;
+            }
+
+            .population-table-box th,
+            .population-table-box td {
+                font-size: 9px;
+                padding: 2px 2px;
+            }
+
+            footer {
+                padding: 12px 2vw;
+                font-size: 11px;
+                gap: 8px;
+            }
+
+            #footer_image img {
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="./index.html"><img src="./assets/logo.png"></a>
+        </div>
+        <ul class="menu">
+            <li><a href="./seongnam.html">성남 소개</a></li>
+            <li><a href="./attraction.html">대표 명소</a></li>
+            <li><a href="./tasty.html">로컬 맛집/카페</a></li>
+            <li><a href="./culture.html">문화/예술</a></li>
+            <li><a href="./event.html">이벤트/축제</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="section-title">성남시의 상징</div>
+
+        <div class="section-bg">
+            <div class="title">성남의 시마크</div>
+            <div class="symbol-group">
+                <div class="symbol-image-box">
+                    <div class="img-placeholder"><img src="./assets/logo.png"></div>
+                </div>
+                <div class="symbol-textbox">
+                    <p>시의 꽃인 철쭉과 남한산성, 신도시의 발전상을 상징적으로 표현</p>
+                    <ul>
+                        <li>다섯개의 철쭉꽃잎 : 경제, 사회, 문화, 교육, 복지가 조화롭게 발전함을 의미</li>
+                        <li>성곽(철쭉꽃 속) : 남한산성을 표현한것으로 역사의 전통성을 슬기롭게 계승하고 희망찬 미래를 가꾸어 가는 성남시의 숭고 한 정신을 의미</li>
+                        <li>기둥(타원속) : 현대도시로 발전하는 성남시, 역동적으로 웅비 하는 성남시를 상징</li>
+                        <li>적색 : 진취적으로 발전하는 활기찬 성남시</li>
+                        <li>황색 : 역사의 전통성을 계승 발전시키는 친근한 성남시</li>
+                        <li>청색 : 맑고 푸른 환경 속에서 살아가는 쾌적한 성남시</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="title">도시 브랜드</div>
+            <div class="symbol-group">
+                <div class="symbol-image-box">
+                    <div class="img-placeholder"><img src="./assets/brand.png"></div>
+                </div>
+                <div class="symbol-textbox">
+                    <p>디자인컨셉</p>
+                    <ul>
+                        <li>
+                            연결된 라인으로 초연결도시 성남을 상징적으로 표현한 디자인입니다. 각 주체가 서로 연결된 상생과 성장의 도시를 의미하는 것으로 유연하게 연속적으로 흐르는 라인은
+                            창의적이고 지속가능한 도시의 발전을 의미합니다. 라인이
+                            만들어낸 프레임은 성남이라는 공간을 상징하며 비어있는 공간은 첨단과 혁신이 만들어내는 무한한 가능성의 도시를 상징합니다.
+                        </li>
+                        <li>프레임을 통해 유연하게 확장하는 형태의 디자인을 활용하여 변화하는 성남, 제한없는 성남의 모습을 표현했습니다.</li>
+                        <li>
+                            첨단과 혁신의 도시 성남을 의미하는 블루, 시민의 행복을 바라는 따듯함을 의미하는 레드를 혼합하여 중의적 컬러인 퍼플계열로 표현함으로써 공존을 상징할 수 있도록
+                            했습니다.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="title">성남시의 캐릭터</div>
+            <div class="symbol-group">
+                <div class="symbol-image-box">
+                    <div class="img-placeholder"><img src="./assets/character.png"></div>
+                </div>
+                <div class="symbol-textbox">
+                    <p>
+                        남녀 한 쌍으로 이루어진 성남시의 지도형상인 타원이미지와 미래 첨단공간이라는 이미지, 남한산성의 역사적인 이미지를 모티브로 미래와 자연, 과학과 전통 환경과 행복을 표현
+                    </p>
+                    <ul>
+                        <li>새남이(좌) : 발전하는 마천루의 형상 적용</li>
+                        <li>새롱이(우) : 성남시 발전의 젖줄인 탄천을 모티브로 적용</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-section">
+            <div class="section-title">위치 및 인구</div>
+            <div class="location-bg">
+                <!-- 위치 -->
+                <div class="title">위치</div>
+                <div class="location-group">
+                    <div class="location-textbox">
+                        <p>
+                            성남시는 대한민국 수도 서울의 남남동쪽, 탄천벌에 자리잡은 인공도시이자 계획도시입니다.
+                        </p>
+                        <p>
+                            동쪽으로 남한산(522m)과 청량산(479m)·검단산(535m)·불곡산(312m)의 긴 산줄기를 경계로 하남시·광주시와 접하고, 서쪽으로는 청계산(618 m)을
+                            경계로 과천시와 의왕시를 접하며, 북쪽은 서울특별시
+                            송파구·강남구·서초구, 남쪽은 용인시와 접합니다.
+                        </p>
+                        <p>
+                            광주산맥에 둘러싸여 탄천을 따라 남북으로 긴 협곡 분지 지형이며, 1989년 성남시 남부에 건설된 분당신도시 및
+                            2000년대에 건설된 판교신도시는 성남 구시가지와
+                            그린벨트로 생활권이 단절되어 있어 시가지와 생활권이 양분되어 있습니다.
+                        </p>
+                    </div>
+                    <div class="map-image-box"><img src="./assets/location.png"></div>
+                </div>
+
+                <div class="title">인구</div>
+                <div class="population-table-box">
+                    <table>
+                        <p style="text-align:left; font-size:15px; color:#555555; margin: 0 0 2px 0;">
+                            (2025. 2. 기준) (단위: 세대, 명)
+                        </p>
+                        <table>
+                            <tr>
+                                <th rowspan="2">행정기관</th>
+                                <th colspan="3">인구수</th>
+                                <th colspan="3">65세 이상</th>
+                                <th rowspan="2">세대수</th>
+                                <th rowspan="2">재외국민</th>
+                            </tr>
+                            <tr>
+                                <th>계</th>
+                                <th>남</th>
+                                <th>여</th>
+                                <th>계</th>
+                                <th>남</th>
+                                <th>여</th>
+                            </tr>
+                            <tr>
+                                <td>성남시</td>
+                                <td>911,807</td>
+                                <td>450,823</td>
+                                <td>460,984</td>
+                                <td>162,977</td>
+                                <td>73,542</td>
+                                <td>89,435</td>
+                                <td>410,324</td>
+                                <td>2,914</td>
+                            </tr>
+                            <tr>
+                                <td>수정구</td>
+                                <td>234,489</td>
+                                <td>118,510</td>
+                                <td>115,979</td>
+                                <td>46,508</td>
+                                <td>20,884</td>
+                                <td>25,624</td>
+                                <td>116,834</td>
+                                <td>436</td>
+                            </tr>
+                            <tr>
+                                <td>중원구</td>
+                                <td>206,412</td>
+                                <td>104,044</td>
+                                <td>102,368</td>
+                                <td>41,851</td>
+                                <td>18,935</td>
+                                <td>22,916</td>
+                                <td>100,594</td>
+                                <td>310</td>
+                            </tr>
+                            <tr>
+                                <td>분당구</td>
+                                <td>470,906</td>
+                                <td>228,269</td>
+                                <td>242,637</td>
+                                <td>74,618</td>
+                                <td>33,723</td>
+                                <td>40,895</td>
+                                <td>192,896</td>
+                                <td>2,168</td>
+                            </tr>
+                        </table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <article id="address">
+            <ul id="info">
+                <li>주소 : 13437 경기도 성남시 중원구 성남대로 997 (여수동)</li>
+                <li>번호 : 1577-3100</li>
+                <li id="copyright">Copyright by Donghoon Seo All Rights Reserved.</li>
+            </ul>
+        </article>
+        <div id="footer_image">
+            <img src="./assets/footer_logo.png">
+        </div>
+    </footer>
+</body>
+
+</html>

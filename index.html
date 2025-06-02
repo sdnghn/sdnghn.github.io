@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <title>성남시의 모든 것</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Noto Sans KR", sans-serif;
+            position: relative;
+        }
+
+        nav {
+            height: 80px;
+            background: #a12a7e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo a:hover {
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+
+        ul.menu {
+            display: flex;
+            gap: 24px;
+            list-style-type: none;
+            justify-content: center;
+        }
+
+        .menu li {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.67);
+            border-radius: 20px;
+            transition: 0.6s;
+        }
+
+        .main {
+            padding-top: 50px;
+        }
+
+        .top-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 798px;
+        }
+
+        .slogan {
+            width: 798px;
+            height: 124px;
+            background-color: #E0FFBA;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slogan img {
+            max-height: 100px;
+            max-width: 90%;
+        }
+
+        .welcome-message {
+            width: 798px;
+            height: 261px;
+            background-color: #d3fff1;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            padding: 12px 0;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .character-image {
+            width: 430px;
+            height: 430px;
+            background-color: #d8d8d84d;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .character-image img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .icons {
+            display: flex;
+            gap: 100px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .icons a {
+            text-decoration: none;
+        }
+
+        .icons a:hover .icon-box {
+            background-color: #1976d2;
+            transition: 0.3s;
+        }
+
+        .icon-box {
+            display: flex;
+            width: 180px;
+            height: 180px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #3ab0ffe7;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            align-items: center;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-width: 0;
+        }
+
+        .icon-box img {
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 5px;
+        }
+
+        .icon-box p {
+            width: 100%;
+            font-size: 20px;
+            margin: 0 0 10px 0;
+        }
+
+        footer {
+            padding: 40px 15px;
+            margin-top: 50px;
+            color: white;
+            background-color: #a12a7e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        #address {
+            width: auto;
+            margin: 0;
+            float: none;
+        }
+
+        #footer_image {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            margin-right: 40px;
+        }
+
+        #footer_image img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        #info {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        #copyright {
+            color: #feffb0;
+            margin-top: 10px;
+            font-size: 11px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                align-items: flex-start;
+                padding: 10px 16px;
+            }
+
+            ul.menu {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                gap: 4px;
+                padding: 0;
+                width: 100%;
+            }
+
+            .menu li {
+                font-size: 13px;
+                white-space: nowrap;
+            }
+
+            .logo {
+                justify-content: flex-start;
+                margin-bottom: 8px;
+            }
+
+            .logo img {
+                height: 36px;
+                width: auto;
+                margin-top: 12px;
+                margin-left: 16px;
+            }
+
+            .top-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left-section {
+                width: 90%;
+                align-items: center;
+            }
+
+            .slogan,
+            .welcome-message {
+                width: 100%;
+            }
+
+            .character-image {
+                width: 80%;
+                height: auto;
+            }
+
+            .icons {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .icon-box {
+                width: 80px;
+                height: 100px;
+            }
+
+            .icon-box p {
+                font-size: 13px;
+                margin-top: 0;
+            }
+
+            .icon-box img {
+                width: 24px;
+                height: 24px;
+                margin-bottom: 0;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            #footer_image img {
+                width: 70%;
+                height: auto;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                padding: 10px;
+            }
+
+            .menu-item {
+                width: 55px;
+                font-size: 11px;
+                text-align: center;
+            }
+
+            .menu-item img {
+                width: 22px;
+                height: 22px;
+                margin-bottom: 3px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .icon-box {
+                width: 80%;
+                height: 140px;
+                font-size: 14px;
+            }
+
+            .icon-box img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .menu li {
+                font-size: 14px;
+            }
+
+            .welcome-message {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            .slogan img {
+                max-height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo"><a href="./index.html"><img src="./assets/logo.png"></a></div>
+        <ul class="menu">
+            <li><a href="./seongnam.html">성남 소개</a></li>
+            <li><a href="./attraction.html">대표 명소</a></li>
+            <li><a href="./tasty.html">로컬 맛집/카페</a></li>
+            <li><a href="./culture.html">문화/예술</a></li>
+            <li><a href="./event.html">이벤트/축제</a></li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <div class="top-section">
+            <div class="left-section">
+                <div class="slogan"><img src="./assets/slogun.gif"></div>
+                <div class="welcome-message">
+                    <p>성남시 홈페이지에 오신 걸 환영합니다!</p>
+                    <p>성남시의 문화, 시정소식, 생활정보 등을 알려드리겠습니다.</p>
+                    <p>시민 여러분과 방문객 모두에게 유익하고 즐거운 정보가 가득하길 바랍니다.</p>
+                    <p>이 사이트를 통해 성남의 다양한 매력을 경험해보세요!</p>
+                </div>
+            </div>
+            <div class="character-image"><img src="./assets/character.png"></div>
+        </div>
+
+        <div class="icons">
+            <a href="./seongnam.html">
+                <div class="icon-box"><img src="./assets/magnifying-glass-solid.svg"><br>
+                    <p>성남 소개</p>
+                </div>
+            </a>
+
+            <a href="./attraction.html">
+                <div class="icon-box"><img src="./assets/location-dot-solid.svg"><br>
+                    <p>대표 명소</p>
+                </div>
+            </a>
+
+            <a href="./tasty.html">
+                <div class="icon-box"><img src="./assets/utensils-solid.svg"><br>
+                    <p>맛집/카페</p>
+                </div>
+            </a>
+
+            <a href="./culture.html">
+                <div class="icon-box"><img src="./assets/palette-solid.svg"><br>
+                    <p>문화/예술</p>
+                </div>
+            </a>
+
+            <a href="./event.html">
+                <div class="icon-box"><img src="./assets/calendar-days-solid.svg"><br>
+                    <p>이벤트/축제</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <article id="address">
+            <ul id="info">
+                <li>주소 : 13437 경기도 성남시 중원구 성남대로 997 (여수동)</li>
+                <li>번호 : 1577-3100</li>
+                <li id="copyright">Copyright by Donghoon Seo All Rights Reserved.</li>
+            </ul>
+        </article>
+        <div id="footer_image">
+            <img src="./assets/footer_logo.png">
+        </div>
+    </footer>
+</body>
+
+</html>
